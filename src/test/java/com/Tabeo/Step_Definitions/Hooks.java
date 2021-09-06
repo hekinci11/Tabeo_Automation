@@ -1,14 +1,12 @@
 package com.Tabeo.Step_Definitions;
 
-import com.Tabeo.Utilities.ConfigurationReader;
+
 import com.Tabeo.Utilities.Driver;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import org.junit.rules.Timeout;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
@@ -33,7 +31,7 @@ public class Hooks {
             scenario.embed(screenshot,"image/png");
         }
 
-      // Driver.closeDriver();
+       Driver.closeDriver();
     }
 
 }

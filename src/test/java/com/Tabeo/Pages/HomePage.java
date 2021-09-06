@@ -28,8 +28,31 @@ public  abstract class HomePage {
     @FindBy(xpath="//button[contains(text(),'Pay £220')]")
     public WebElement PayYearlyButton;
 
-    @FindBy(xpath="//a[.='Read full license']")
-    public WebElement ReadFullLicenseButton;
+    @FindBy(xpath="//p[contains(.,\"This icon pack is just what I need for my latest project. There's an icon for ju\")]")
+    public WebElement review1;
+
+    @FindBy(xpath="//dt[.='What format are these icons?']")
+    public WebElement FAQ1;
+
+    @FindBy(xpath="//h4[.='Overview']")
+    public WebElement License;
+
+    @FindBy(css=".text-xl")
+    public WebElement SigninText;
+
+    @FindBy(css="[viewBox='0 0 24 24']")
+    public WebElement InstagramButton;
+
+    @FindBy(xpath="(//li)[6]/a")
+    public WebElement TwitterButton;
+
+    @FindBy(css=".space-x-6 > li:nth-of-type(1) .w-5")
+    public WebElement FacebookButton;
+
+
+
+
+
 
 
 

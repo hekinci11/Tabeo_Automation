@@ -30,6 +30,10 @@ public class PaymentPage extends HomePage{
     @FindBy(xpath="//button[@id='test-source-authorize-3ds']")
     public WebElement CompleteAuth;
 
+    @FindBy(xpath="//div[@id='cardNumber-fieldset']/div[.='Your card has been declined.']")
+    public WebElement CardFailMessage;
+
+
 
 
 

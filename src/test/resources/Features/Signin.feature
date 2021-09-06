@@ -1,4 +1,5 @@
-@Signin
+
+@Signin @regression
 Feature: Users should be able to Sign in
 
   Background:

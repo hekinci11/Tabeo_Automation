@@ -25,11 +25,8 @@ public class Driver {
             switch (browser) {
                 case "chrome":
 
-                    //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-                    WebDriverManager.chromedriver().setup();
-
-
-                    driver = new ChromeDriver();
+                     WebDriverManager.chromedriver().setup();
+                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();

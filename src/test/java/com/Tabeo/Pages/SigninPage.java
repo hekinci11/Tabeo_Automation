@@ -3,11 +3,10 @@ package com.Tabeo.Pages;
 import com.Tabeo.Utilities.BrowserUtils;
 import com.Tabeo.Utilities.ConfigurationReader;
 import com.Tabeo.Utilities.Driver;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
 
 public class SigninPage extends HomePage {
 
@@ -18,7 +17,6 @@ public class SigninPage extends HomePage {
 
     @FindBy(xpath="//button[.='Sign in with Google']")
     public WebElement SigninWithGoogleButton;
-
 
 
     @FindBy(xpath = "//*[@id='identifierId']")
@@ -65,7 +63,6 @@ public class SigninPage extends HomePage {
        passwordBox.sendKeys(ConfigurationReader.get("password"));
        nextButton.click();
     }
-
 
 
 }

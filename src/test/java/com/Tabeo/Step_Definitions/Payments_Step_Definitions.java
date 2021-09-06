@@ -1,17 +1,11 @@
 package com.Tabeo.Step_Definitions;
 
-import com.Tabeo.Pages.HomePage;
+
 import com.Tabeo.Pages.PaymentPage;
-import com.Tabeo.Pages.SigninPage;
 import com.Tabeo.Utilities.BrowserUtils;
 import com.Tabeo.Utilities.Driver;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.Set;
-
 import static org.junit.Assert.assertEquals;
 
 public class Payments_Step_Definitions {
@@ -21,6 +15,14 @@ public class Payments_Step_Definitions {
 
         BrowserUtils.waitFor(2);
         new PaymentPage().PayMoButton.click();
+        BrowserUtils.waitFor(2);
+
+    }
+
+    @When("the user clicks on {int} pounds yearly button")
+    public void the_user_clicks_on_pounds_yearly_button(Integer int1) {
+        BrowserUtils.waitFor(2);
+        new PaymentPage().PayYearlyButton.click();
         BrowserUtils.waitFor(2);
 
     }
@@ -68,25 +70,23 @@ public class Payments_Step_Definitions {
     public void the_user_clicks_on_submit_button() {
 
         new PaymentPage().SubmitButton.click();
+
+
     }
 
 
     @When("the user clicks on complete authentication button")
     public void the_user_clicks_on_complete_authentication_button() {
+        BrowserUtils.waitFor(5);
 
-       // WebElement iframe = Driver.get().findElement(By.name("acsFrame"));
-     //   Driver.get().switchTo().frame(iframe);
+        Driver.get().switchTo().frame(0);
+        Driver.get().switchTo().frame(0);
+        Driver.get().switchTo().frame(0);
 
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitFor(5);
 
-        Set<String> windowHandles = Driver.get().getWindowHandles();
-        System.out.println(windowHandles);
 
-        // BrowserUtils.waitForClickablility(new PaymentPage().CompleteAuth,15);
-
-        BrowserUtils.clickWithJS(new PaymentPage().CompleteAuth);
-
-       // new PaymentPage().CompleteAuth.click();
+        new PaymentPage().CompleteAuth.click();
     }
 
     @Then("the user lands on success message page")
@@ -98,6 +98,17 @@ public class Payments_Step_Definitions {
 
         assertEquals("Your purchase is ready to be downloaded.",new PaymentPage().SuccessMessage.getText());
     }
+
+    @Then("the user lands on fail message page")
+    public void the_user_lands_on_fail_message_page() {
+
+        BrowserUtils.waitForVisibility(new PaymentPage().CardFailMessage,15);
+
+
+        assertEquals("Your card has been declined.",new PaymentPage().CardFailMessage.getText());
+
+    }
+
 
 
 }
